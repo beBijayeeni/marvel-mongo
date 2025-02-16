@@ -34,6 +34,12 @@ The chatbot answers questions by retrieving relevant text fragments from web pag
 - Document Chunking: Uses `RecursiveCharacterTextSplitter` to break documents into manageable pieces.
 - Vector Storage: Embeddings are stored in MongoDB Atlas with a vector search index.
 
+## Architecture
+- Document Loading & Processing: The Vectorize class (in `vector.py`) downloads documents from a list of URLs, splits the text into chunks, and generates embeddings.
+- Embedding Storage: Generated embeddings are stored in a MongoDB Atlas collection. A vector search index is created on the embedding field.
+Query Handling: The Bot class (in `query.py`) sets up a retrieval chain using LangChain. When a user inputs a query, the retrieval chain searches MongoDB for the most similar document chunks and passes them as context to the LLM.
+- Response Generation: The LLM (Google Generative AI via LangChain) generates the final answer based solely on the retrieved context.
+
 ## Prerequisites
 
 - Basic knowledge of Git & Github
@@ -41,9 +47,12 @@ The chatbot answers questions by retrieving relevant text fragments from web pag
 - Python
 - Pipenv
 - Langchain
+ 
+## Installation
 
-## Imp Git commands
-    
+### Clone the Repository
+```sh
+
 ## Imp Pipenv commands
 - **Install pipenv package**:
 
