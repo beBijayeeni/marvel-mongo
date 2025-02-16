@@ -56,7 +56,7 @@ Query Handling: The Bot class (in `query.py`) sets up a retrieval chain using La
 git clone https://github.com/beBijayeeni/marvel-mongo.git
 ```
 
-## Imp Pipenv commands
+### Imp Pipenv commands
 - **Install pipenv package**:
 
     ```bash
