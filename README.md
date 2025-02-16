@@ -15,8 +15,9 @@ This project is a Retrieval-Augmented Generation (RAG) chatbot built with LangCh
 - [Features](#features) 
 - [Architectures](#architectures) 
 - [Prerequisties](#prerequisties)
-- [Installation](#installation) 
-- [Configuration](#configuration) 
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [License](#license)
 
 ## Overview
 
@@ -52,6 +53,9 @@ Query Handling: The Bot class (in `query.py`) sets up a retrieval chain using La
 
 ### Clone the Repository
 ```sh
+git clone
+cd
+```
 
 ## Imp Pipenv commands
 - **Install pipenv package**:
@@ -77,3 +81,47 @@ Query Handling: The Bot class (in `query.py`) sets up a retrieval chain using La
     ```bash
     pipenv install -r requirements.txt
     ```
+
+## Configuration
+
+### Environment Variables
+Create a `.env` file in the project root with the following (adjust values as needed):
+```bash
+# Google Generative AI API key
+GEMINI_API_KEY=your_google_gemini_api_key
+
+# MongoDB Atlas connection string and database info
+ATLAS_CONNECTION_STRING=your_mongodb_atlas_connection_string
+DB_NAME=your_database_name
+COLLECTION_NAME=your_collection_name
+VECTOR_INDEX=your_vector_index_name
+
+# (Optional) Custom user agent for HTTP requests
+USER_AGENT=LLM_APP_DEMO/1.0
+```
+
+### MongoDB Atlas Setup
+- Cluster and Database: Log into MongoDB Atlas and create a new cluster if you don’t have one. Create (or use an existing) database that matches `DB_NAME`.
+
+-Collection: Create a collection with the name in `COLLECTION_NAME`. This is where your embeddings and documents will be stored.
+
+- Vector Search Index: In your collection’s “Search” tab, create a custom index using a definition similar to:
+```bash
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "embedding": {
+        "type": "knnVector",
+        "dimensions": 768,
+        "similarity": "cosine"
+      }
+    }
+  }
+}
+```
+Save the index; it may take a few minutes to build.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
