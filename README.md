@@ -30,6 +30,7 @@ The chatbot answers questions by retrieving relevant text fragments from web pag
 -Answer user queries by retrieving the most relevant chunks and generating a natural language answer. 
 
 ## Features
+
 -RAG (Retrieval-Augmented Generation): Combines document retrieval with LLM generation to answer questions.
 -Document Chunking: Uses `RecursiveCharacterTextSplitter` to break documents into manageable pieces.
 -Vector Storage: Embeddings are stored in MongoDB Atlas with a vector search index.
