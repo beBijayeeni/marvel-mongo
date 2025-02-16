@@ -11,6 +11,7 @@ This project is a Retrieval-Augmented Generation (RAG) chatbot built with LangCh
 > Exposing such data can lead to security vulnerabilities and unauthorized access to your systems.
 
 ## Table of Contents
+
 -[Overview](#overview) 
 -[Features](#features) 
 -[Architectures](#architectures) 
