@@ -53,8 +53,7 @@ Query Handling: The Bot class (in `query.py`) sets up a retrieval chain using La
 
 ### Clone the Repository
 ```sh
-git clone
-cd
+git clone https://github.com/beBijayeeni/marvel-mongo.git
 ```
 
 ## Imp Pipenv commands
@@ -103,7 +102,7 @@ USER_AGENT=LLM_APP_DEMO/1.0
 ### MongoDB Atlas Setup
 - Cluster and Database: Log into MongoDB Atlas and create a new cluster if you don’t have one. Create (or use an existing) database that matches `DB_NAME`.
 
--Collection: Create a collection with the name in `COLLECTION_NAME`. This is where your embeddings and documents will be stored.
+- Collection: Create a collection with the name in `COLLECTION_NAME`. This is where your embeddings and documents will be stored.
 
 - Vector Search Index: In your collection’s “Search” tab, create a custom index using a definition similar to:
 ```bash
